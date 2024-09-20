@@ -3,12 +3,14 @@ import dbConnection from '../database/config.js'; // Asegúrate de que esta func
 import 'dotenv/config'; // Para cargar las variables de entorno desde un archivo .env
 import routesRol from '../routes/rolRoute.js';
 import routesService from '../routes/serviceRoute.js';
+import routesCategory from '../routes/categoryRoute.js'; 
 
 class Server {
     constructor() {
         this.app = express();
         this.pathRol = '/api/Rol'; // Coincide con la solicitud que estás enviando
         this.pathService = '/api/services'; // Cambiado a minúsculas para la convención
+        this.pathCategory = '/api/category';
         this.initializeMiddlewares();
         this.initializeRoutes();
         this.connectToDatabase();
@@ -31,6 +33,7 @@ class Server {
     initializeRoutes() {
         this.app.use(this.pathRol, routesRol);
         this.app.use(this.pathService, routesService);
+        this.app.use(this.pathCategory, routesCategory);
     }
 
     listen() {
