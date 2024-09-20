@@ -9,24 +9,6 @@ export async function getCategory(req, res) {
     }
 } 
 
- /* export async function getSpecimenById(req, res) {
-    const { id } = req.params;
-    try {
-      const category = await Category.findOne({ "specimens._id": id }, { "specimens.$": 1 });
-
-        if (!category || category.specimens.length === 0) {
-            return res.status(404).json({ msg: 'Specimen not found' });
-        }
-
-        // Convertir el ejemplar a un objeto JSON para incluir los virtuals
-        const specimen = category.specimens[0].toJSON(); 
-
-        res.json(specimen);
-    } catch (error) {
-        res.status(500).json({ msg: 'Error fetching specimen', error: error.message });
-    }
-}
-*/
 export async function getSpecimenByName(req, res) {
     const { name } = req.params;
     try {
