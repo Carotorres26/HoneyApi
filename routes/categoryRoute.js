@@ -10,8 +10,8 @@ routesCategory.delete('/:id', deleteCategory);
 routesCategory.post('/add-specimen', addSpecimen); 
 routesCategory.put('/edit-specimen', editSpecimen); 
 routesCategory.put('/move-specimen', moveSpecimen); 
-routesCategory.get('/specimen/:id', getSpecimenById);
+//routesCategory.get('/specimen/:id', getSpecimenById);
 routesCategory.get('/specimen-name/:name', getSpecimenByName);
-
+  
 
 export default routesCategory;

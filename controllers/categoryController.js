@@ -7,12 +7,12 @@ export async function getCategory(req, res) {
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
-}
+} 
 
-export async function getSpecimenById(req, res) {
+ /* export async function getSpecimenById(req, res) {
     const { id } = req.params;
     try {
-        const category = await Category.findOne({ "specimens._id": id }, { "specimens.$": 1 });
+      const category = await Category.findOne({ "specimens._id": id }, { "specimens.$": 1 });
 
         if (!category || category.specimens.length === 0) {
             return res.status(404).json({ msg: 'Specimen not found' });
@@ -26,7 +26,7 @@ export async function getSpecimenById(req, res) {
         res.status(500).json({ msg: 'Error fetching specimen', error: error.message });
     }
 }
-
+*/
 export async function getSpecimenByName(req, res) {
     const { name } = req.params;
     try {

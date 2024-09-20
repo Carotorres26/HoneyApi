@@ -30,7 +30,7 @@ const SpecimenSchema = new Schema({
     email: {
         type: String,
         required: [true, 'The email is required'],
-    }
+    } 
 });
 
 SpecimenSchema.virtual('ageInMonths').get(function () {
